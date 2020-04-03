@@ -10,8 +10,8 @@
                         th Name
                         th Mobile
                         th Email
-                tbody
-                    tr(v-for="(student,index) in students")
+                transition-group(name="slideDown" mode="out-in" appear tag="tbody")
+                    tr(v-for="(student,index) in students" :key="`Row${index}`")
                         td  {{index + 1}}
                         td  {{student.name}}
                         td      {{student.mobile}}
